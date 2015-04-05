@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Air Conditioner Control</title>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="shortcut icon" href="/<your_secret_here>/favicon.ico" />
+</head>
+<script src="jquery-1.11.2.min.js"></script>
+<script>
+$(function()
+{
+    $("button").on('click', function()
+    {
+        var btn = $(this);
+        var id = btn.attr('id');
+        console.log("clicked auth:" + id)
+
+        var email = btn.attr('data-key')
+
+        postDataToServerAndUpdateUI(email);
+    });
+})
+
+function postDataToServerAndUpdateUI(email)
+{
+    $.ajax(
+    {
+        url : "/<your_secret_here>/",
+        data :
+        {
+            "email" : email,
+        },
+        type : 'post',
+        error : errorSendingData,
+        success : dataSentOk
+    });
+}
+
+function errorSendingData(XMLHttpRequest, textStatus, errorThrown)
+{
+    alert('Problem connecting to server, status:[' + XMLHttpRequest.status + '], status text: [' + XMLHttpRequest.statusText + ']');
+}
+
+function dataSentOk(data, status, jqXHR)
+{
+    alert(data);
+}
+</script>
+
+<body>
+	<button id="i" class="btn btn-default" data-key="1">Ivan</button>
+	<button id="m" class="btn btn-default" data-key="2">Mimi</button>
+	<button id="d" class="btn btn-default" data-key="3">Decho</button>
+	<button id="r" class="btn btn-default" data-key="4">Rumi</button>
+</body>
+</html>

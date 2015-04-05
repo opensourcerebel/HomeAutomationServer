@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Air Conditioner Control</title>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="shortcut icon" href="__/favicon.ico" />
+<link rel="stylesheet" href="dist/css/bootstrap.min.css">
+<script src="dist/js/jquery-1.11.2.min.js"></script>
+<script src="dist/js/bootstrap.min.js"></script>
+<script src="dist/js/serverAir.js"></script>
+</head>
+<body>
+	<p>Working State</p>
+	<div id="working_state" data-mode="status-switch" class="btn-group">
+		<button id="working_state_on" class="btn btn-default btn-success"
+			data-id="ON" data-key="on">on</button>
+		<button id="working_state_off" class="btn btn-default" data-id="OFF" data-key="off">off</button>
+	</div>
+	<div id="deg" >
+	<label>Degrees:</label><label id="deg_lbl">21</label>
+	</div>
+	<div id="deg_btn" data-mode="status-switch" class="btn-group">
+		<button id="deg_up" class="btn btn-default btn-success"
+			data-id="U" data-key="on">up</button>
+		<button id="deg_down" class="btn btn-default" data-id="D" data-key="off">down</button>
+	</div>
+	
+	<p>Mode</p>
+	<div id="working_mode" data-mode="status-switch" class="btn-group">
+		<button id="mode_cool" class="btn btn-default btn-success"
+			data-id="COOL" data-key="on">cool</button>
+		<button id="mode_heat" class="btn btn-default" data-id="HEAT" data-key="off">heat</button>
+	</div>
+	<p>Fan State</p>
+	<div id="fan_state" data-mode="status-switch" class="btn-group">
+		<button id="fan_auto" class="btn btn-default btn-success"
+			data-id="FANAUTO" data-key="on">auto</button>
+		<button id="fan_silent" class="btn btn-default" data-id="FANSILENT" data-key="off">silent</button>
+	</div>
+	<p>Horizontal swing state</p>
+	<div id="hswing_state" data-mode="status-switch" class="btn-group">
+		<button id="hswing_on" class="btn btn-default btn-success"
+			data-id="SWINGON" data-key="on">on</button>
+		<button id="hswing_off" class="btn btn-default" data-id="SWINGOFF" data-key="off">off</button>
+	</div>
+	<p>Vertical swing state</p>
+	<div id="vswing_state" data-mode="status-switch" class="btn-group">
+		<button id="vswing_on" class="btn btn-default btn-success"
+			data-id="SWINGON" data-key="on">on</button>
+		<button id="vswing_off" class="btn btn-default" data-id="SWINGOFF" data-key="off">off</button>
+	</div>
+</body>
+</html>
